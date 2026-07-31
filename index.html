@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Liquid Glass Profile</title>
+    <title>液态玻璃个人主页 | 曾铭轩</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <script>
@@ -41,7 +41,7 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            /* 浅色液态玻璃 */
+            /* 浅色液态玻璃样式 */
             .liquid-glass {
                 background: rgba(255, 255, 255, 0.25);
                 backdrop-filter: blur(22px) saturate(180%);
@@ -49,7 +49,7 @@
                 border: 1px solid rgba(255, 255, 255, 0.45);
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
             }
-            /* 深色液态玻璃 */
+            /* 深色液态玻璃样式 */
             .dark .liquid-glass {
                 background: rgba(30, 30, 35, 0.25);
                 backdrop-filter: blur(24px) saturate(150%);
@@ -57,14 +57,37 @@
                 border: 1px solid rgba(255, 255, 255, 0.12);
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             }
+            .code-block{
+                background:rgba(0,0,0,0.08);
+                border-radius:12px;
+                padding:12px;
+                font-family:monospace;
+                overflow-x:auto;
+            }
+            .dark .code-block{
+                background:rgba(0,0,0,0.35);
+            }
+            .download-btn{
+                background:rgba(0,122,255,0.7);
+                backdrop-filter: blur(10px);
+                color:white;
+                padding:12px 24px;
+                border-radius:12px;
+                transition: all 0.3s ease;
+            }
+            .download-btn:hover{
+                background:rgba(0,122,255,0.9);
+                transform: translateY(-2px);
+            }
             .delay-100 { animation-delay: 0.1s; }
             .delay-220 { animation-delay: 0.22s; }
             .delay-380 { animation-delay: 0.38s; }
             .delay-550 { animation-delay: 0.55s; }
             .delay-750 { animation-delay: 0.75s; }
+            .delay-850 { animation-delay: 0.85s; }
             .delay-950 { animation-delay: 0.95s; }
         }
-        /* 网点背景 深浅自动切换 */
+        /* 网点背景，深浅自动切换 */
         body {
             background-color: #F5F5F7;
             background-image: radial-gradient(#e0e0e8 1px, transparent 1px);
@@ -80,63 +103,83 @@
 </head>
 <body class="font-apple min-h-screen px-6 py-16 text-appleText dark:text-appleDarkText overflow-x-hidden transition-colors duration-500">
     <div class="max-w-5xl mx-auto relative">
-        <!-- 明暗切换按钮 -->
+        <!-- 明暗主题切换按钮 -->
         <button id="themeBtn" class="opacity-0 animate-slideUpSlow delay-100 liquid-glass w-12 h-12 rounded-full flex items-center justify-center text-xl absolute top-0 right-0 hover:scale-105 transition-transform">
             <i class="fa fa-moon-o dark:hidden"></i>
             <i class="fa fa-sun-o hidden dark:block"></i>
         </button>
 
-        <!-- 顶部标题 -->
+        <!-- 头部标题 -->
         <div class="opacity-0 animate-slideUpSlow delay-100 text-center mb-12 pt-16">
-            <h1 class="text-[clamp(2.4rem,6vw,3.8rem)] font-semibold tracking-tight">Your Name</h1>
-            <p class="text-appleGray mt-3 text-lg tracking-wide">Developer · Tech Blogger · Open Source Creator</p>
+            <h1 class="text-[clamp(2.4rem,6vw,3.8rem)] font-semibold tracking-tight">曾铭轩</h1>
+            <p class="text-appleGray mt-3 text-lg tracking-wide">编程爱好者 · C++初学者 · 数码爱好者</p>
         </div>
 
         <!-- 液态玻璃小组件卡片布局 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- 关于我 -->
             <div class="opacity-0 animate-slideUpSlow delay-220 liquid-glass rounded-3xl p-8">
-                <h2 class="text-xl font-medium mb-3">About Me</h2>
+                <h2 class="text-xl font-medium mb-3">关于我</h2>
                 <p class="text-appleGray leading-relaxed">
-                    Focus on mobile hardware, Huawei devices, programming development & front-end creation.
-                    I love making minimalist UI designs and open-source projects on GitHub.
+                    我是曾铭轩，一名热爱编程的学生，现阶段主要学习C++编程语言，处于初学阶段。
+                    日常也会制作前端网页、研究数码手机硬件，喜欢极简苹果风UI设计，我的所有作品都会开源发布在GitHub。
                 </p>
             </div>
 
             <!-- 技能标签 -->
             <div class="opacity-0 animate-slideUpSlow delay-380 liquid-glass rounded-3xl p-8">
-                <h2 class="text-xl font-medium mb-3">Skills</h2>
+                <h2 class="text-xl font-medium mb-3">掌握技能</h2>
                 <div class="flex flex-wrap gap-3 mt-2">
+                    <span class="px-3 py-1 rounded-full bg-white/40 dark:bg-white/10 text-sm">C++</span>
                     <span class="px-3 py-1 rounded-full bg-white/40 dark:bg-white/10 text-sm">HTML/CSS</span>
                     <span class="px-3 py-1 rounded-full bg-white/40 dark:bg-white/10 text-sm">JavaScript</span>
-                    <span class="px-3 py-1 rounded-full bg-white/40 dark:bg-white/10 text-sm">C/C++</span>
                     <span class="px-3 py-1 rounded-full bg-white/40 dark:bg-white/10 text-sm">GitHub Pages</span>
                 </div>
             </div>
 
-            <!-- 开源项目 -->
+            <!-- C++示例代码卡片 -->
             <div class="opacity-0 animate-slideUpSlow delay-550 liquid-glass rounded-3xl p-8 md:col-span-2">
-                <h2 class="text-xl font-medium mb-3">My Projects</h2>
-                <p class="text-appleGray">All projects are open source on GitHub, including front-end pages, small tools and script demos.</p>
+                <h2 class="text-xl font-medium mb-3">C++ 练习示例</h2>
+                <div class="code-block text-appleGray">
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout << "Hello World! 我正在学习C++" << endl;
+    return 0;
+}</pre>
+                </div>
+            </div>
+
+            <!-- C++文件下载卡片（新增） -->
+            <div class="opacity-0 animate-slideUpSlow delay-650 liquid-glass rounded-3xl p-8 md:col-span-2 text-center">
+                <h2 class="text-xl font-medium mb-4">编程源码文件下载</h2>
+                <p class="text-appleGray mb-6">包含C++练习代码、编程素材文件，提取密码：Ad3X</p>
+                <a href="https://1847412693.share.123pan.cn/123pan/qYCvvd-pH4jH?pwd=Ad3X#" target="_blank" class="download-btn inline-block">
+                    <i class="fa fa-download mr-2"></i>C++及编程文件下载链接
+                </a>
+            </div>
+
+            <!-- 开源项目 -->
+            <div class="opacity-0 animate-slideUpSlow delay-750 liquid-glass rounded-3xl p-8 md:col-span-2">
+                <h2 class="text-xl font-medium mb-3">我的项目</h2>
+                <p class="text-appleGray">我会持续更新前端页面、C++练习代码、小工具脚本等开源项目，欢迎前往GitHub查看与交流学习。</p>
             </div>
 
             <!-- 社交链接 -->
-            <div class="opacity-0 animate-slideUpSlow delay-750 liquid-glass rounded-3xl p-8 md:col-span-2 flex justify-center gap-8 text-3xl">
-                <a href="https://github.com/你的用户名" target="_blank" class="hover:opacity-60 transition-opacity">
+            <div class="opacity-0 animate-slideUpSlow delay-850 liquid-glass rounded-3xl p-8 md:col-span-2 flex justify-center gap-8 text-3xl">
+                <a href="https://github.com/你的GitHub用户名" target="_blank" class="hover:opacity-60 transition-opacity">
                     <i class="fa fa-github"></i>
                 </a>
                 <a href="mailto:你的邮箱" class="hover:opacity-60 transition-opacity">
                     <i class="fa fa-envelope-o"></i>
-                </a>
-                <a href="#" class="hover:opacity-60 transition-opacity">
-                    <i class="fa fa-twitter"></i>
                 </a>
             </div>
         </div>
 
         <!-- 底部文字 -->
         <div class="opacity-0 animate-fadeSlow delay-950 text-center mt-14 text-appleGray text-sm">
-            Liquid Glass UI • Apple Style • GitHub Pages
+            液态玻璃UI设计 · 苹果极简风格 · GitHub Pages 部署
         </div>
     </div>
 
